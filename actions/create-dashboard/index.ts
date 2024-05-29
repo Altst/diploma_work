@@ -12,7 +12,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   if(!userId){
     return{
-      error: "Неавторизовано"
+      error: "Unauthorized"
     }
   }
 
@@ -28,7 +28,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     })
   } catch (error) {
     return{
-      error: "Не вдалося створити"
+      error: "Failed to create"
     }
   }
 
