@@ -1,6 +1,6 @@
 "use client";
 
-import { createBoard } from "@/actions/create-dashboard";
+import { createBoard } from "@/actions/create-board";
 import {
   Popover,
   PopoverContent,
