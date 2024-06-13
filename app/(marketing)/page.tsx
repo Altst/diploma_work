@@ -21,8 +21,8 @@ const MarketingPage = () => {
               src="/logo.png"
               alt="logo"
               className="text-center"
-              height={150}
-              width={150}
+              height={350}
+              width={350}
             ></Image>
           </div>
           <h1 className="text-3xl md:text-6xl font-bold mb-5">
