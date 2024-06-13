@@ -1,4 +1,5 @@
 export const siteConfig = {
-  name: "StudTask",
-  description: "Application for organizing a student council",
+  name: "Студентська рада ДТУ ШАГ",
+  description:
+    "Додаток для організування студентської ради ДТУ ШАГ",
 };
