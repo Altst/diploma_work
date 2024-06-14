@@ -5,7 +5,7 @@ export const Logo = () => {
   return (
     <Link href="/">
       <div className="hover:opacity-75 transition items-center gap-x-2 hidden md:flex">
-        <Image src="/logo.png" alt="logo" height={30} width={30}></Image>
+        <Image src="/logo.png" alt="logo" height={60} width={60}></Image>
         <p className="text-lg pb-1">Студентська рада ДТУ ШАГ</p>
       </div>
     </Link>

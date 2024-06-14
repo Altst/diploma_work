@@ -16,6 +16,9 @@ const MarketingPage = () => {
 
       <main className="absolute inset-0 flex justify-center items-center">
         <div className="text-center text-white">
+          <h1 className="text-3xl md:text-6xl font-bold mb-5">
+            Дніпровський технологічний університет ШАГ
+          </h1>
           <div className="flex justify-center mb-5">
             <Image
               src="/logo.png"
@@ -26,7 +29,7 @@ const MarketingPage = () => {
             ></Image>
           </div>
           <h1 className="text-3xl md:text-6xl font-bold mb-5">
-            Студентська рада ДТУ ШАГ
+            Студентська рада
           </h1>
           {/* <p className="text-lg md:text-3xl mb-5 text-[#22324C] bg-white rounded-md px-2 py-1 mx-5">
             Додаток для організування студентської ради ДТУ ШАГ StudTask
