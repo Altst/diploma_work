@@ -31,9 +31,6 @@ const MarketingPage = () => {
           <h1 className="text-3xl md:text-6xl font-bold mb-5">
             Студентська рада
           </h1>
-          {/* <p className="text-lg md:text-3xl mb-5 text-[#22324C] bg-white rounded-md px-2 py-1 mx-5">
-            Додаток для організування студентської ради ДТУ ШАГ StudTask
-          </p> */}
           <Button
             className="bg-[#1BD2C7] text-lg md:text-3xl uppercase hover:bg-[#22324C] mt-5"
             size="lg"
