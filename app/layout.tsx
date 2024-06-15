@@ -40,6 +40,9 @@ export default function RootLayout({
           hrefLang="uk"
           href="https://uk.studradaitstep.online"
         ></Link>
+      </Head>
+      <body className={inter.className}>
+        {children}
         <Script
           type="text/javascript"
           src="https://cdn.weglot.com/weglot.min.js"
@@ -53,8 +56,7 @@ export default function RootLayout({
             `,
           }}
         />
-      </Head>
-      <body className={inter.className}>{children}</body>
+      </body>
     </html>
   );
 }
