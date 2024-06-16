@@ -33,7 +33,7 @@ export const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
 
   const { execute } = useAction(updateList, {
     onSuccess: (data) => {
-      toast.success(`Renamed to "${data.title}"`);
+      toast.success(`Перейменовано на "${data.title}"`);
       setTitle(data.title);
       disableEditing;
     },
@@ -80,7 +80,7 @@ export const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
             ref={inputRef}
             onBlur={onBlur}
             id="title"
-            placeholder="Enter list title..."
+            placeholder="Введіть назву списку..."
             defaultValue={title}
             className="text-sm px-[7px] py-1 h-7 font-medium border-transparent hover:border-input transition truncate"
           />

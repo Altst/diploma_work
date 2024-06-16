@@ -10,6 +10,7 @@ import { createCard } from "@/actions/create-card";
 import { useParams } from "next/navigation";
 import { useEventListener, useOnClickOutside } from "usehooks-ts";
 import { toast } from "sonner";
+import { Protect } from "@clerk/nextjs";
 
 interface CardFormProps {
   listId: string;
@@ -24,7 +25,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
     const formRef = useRef<ElementRef<"form">>(null);
     const { execute, fieldErrors } = useAction(createCard, {
       onSuccess: (data) => {
-        toast.success(`Card "${data.title}" created`);
+        toast.success(`Картка "${data.title}" була створена`);
         formRef.current?.reset();
       },
       onError: (error) => {
@@ -69,13 +70,13 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
             id="title"
             onKeyDown={onTextareakeyDown}
             ref={ref}
-            placeholder="Enter a title for this card..."
+            placeholder="Введіть назву для картки..."
             errors={fieldErrors}
           />
           <input hidden id="listId" name="listId" value={listId} />
           <div className="flex items-center gap-x-1">
             <FormSubmit className="bg-[#22324C] hover:bg-[#1BD2C7]">
-              Add card
+              Додати картку
             </FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="ghost">
               <X className="h-5 w-5" />
@@ -86,17 +87,19 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
     }
 
     return (
-      <div className="pt-2 px-2">
-        <Button
-          onClick={enableEditing}
-          className="h-auto px-2 py-1.5 w-full justify-start text-muted-foreground text-sm"
-          size="sm"
-          variant="ghost"
-        >
-          <Plus className="h-4 w-4 mr-2" />
-          Add a card
-        </Button>
-      </div>
+      <Protect permission="org:create_new_card:permission">
+        <div className="pt-2 px-2">
+          <Button
+            onClick={enableEditing}
+            className="h-auto px-2 py-1.5 w-full justify-start text-muted-foreground text-sm"
+            size="sm"
+            variant="ghost"
+          >
+            <Plus className="h-4 w-4 mr-2" />
+            Додати картку
+          </Button>
+        </div>
+      </Protect>
     );
   }
 );

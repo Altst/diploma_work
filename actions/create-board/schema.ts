@@ -3,10 +3,10 @@ import { z } from "zod";
 export const CreateBoard = z.object({
   title: z
     .string({
-      required_error: "Board title is required",
-      invalid_type_error: "Board title is required",
+      required_error: "Дошка повинна мати назву",
+      invalid_type_error: "Дошка повинна мати назву",
     })
     .min(3, {
-      message: "Title is too short",
+      message: "Назва занадто коротка",
     }),
 });

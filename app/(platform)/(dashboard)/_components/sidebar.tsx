@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { Plus } from "lucide-react";
 import { useLocalStorage } from "usehooks-ts";
-import { useOrganization, useOrganizationList } from "@clerk/nextjs";
+import { Protect, useOrganization, useOrganizationList } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Accordion } from "@/components/ui/accordion";
 import { NavItem, Organization } from "./nav-item";
@@ -63,7 +62,7 @@ export const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
   return (
     <>
       <div className="font-medium text-xs items-center mb-1 flex">
-        <span className="pl-4">Workspaces</span>
+        <span className="mr-auto text-lg">Відділи</span>
         <Button
           asChild
           type="button"
@@ -71,9 +70,11 @@ export const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
           variant="ghost"
           className="ml-auto"
         >
-          <Link href="/select-org">
-            <Plus className="h-4 w-4" />
-          </Link>
+          <Protect permission="org:create_new_organization:permission">
+            <Link href="/select-org">
+              <Plus className="h-4 w-4" />
+            </Link>
+          </Protect>
         </Button>
       </div>
       <Accordion

@@ -14,7 +14,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   if (!userId || !orgId) {
     return {
-      error: "Unauthorized",
+      error: "Неавторізовано",
     };
   }
 
@@ -34,7 +34,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
 
     if (!cardToCopy) {
-      return { error: "Card not found" };
+      return { error: "Карточку не знайдено" };
     }
 
     const lastCard = await db.card.findFirst({
@@ -47,7 +47,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
     card = await db.card.create({
       data: {
-        title: `${cardToCopy.title} - Copy`,
+        title: `${cardToCopy.title} - Копія`,
         description: cardToCopy.description,
         order: newOrder,
         listId: cardToCopy.listId,
@@ -62,7 +62,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: "Failed to copy",
+      error: "Не вдалося скопіювати ",
     };
   }
 

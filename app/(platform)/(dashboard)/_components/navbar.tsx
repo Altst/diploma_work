@@ -18,7 +18,7 @@ export const Navbar = () => {
             size="sm"
             className="rounded-sm hidden md:block h-auto py-1.5 px-2 bg-[#22324C] hover:bg-[#1BD2C7]"
           >
-            Create
+            Створити
           </Button>
         </FormPopover>
         <FormPopover>

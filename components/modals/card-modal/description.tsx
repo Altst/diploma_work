@@ -13,6 +13,7 @@ import { useEventListener, useOnClickOutside } from "usehooks-ts";
 import { useAction } from "@/hooks/use-action";
 import { updateCard } from "@/actions/update-card";
 import { toast } from "sonner";
+import { Protect } from "@clerk/nextjs";
 
 interface DescriptionProps {
   data: CardWithList;
@@ -55,7 +56,7 @@ export const Description = ({ data }: DescriptionProps) => {
         queryKey: ["card-logs", data.id],
       });
 
-      toast.success(`Card "${data.title}" updated`);
+      toast.success(`Картка "${data.title}" була оновлена`);
       disableEditing();
     },
     onError: (error) => {
@@ -78,38 +79,40 @@ export const Description = ({ data }: DescriptionProps) => {
     <div className="flex items-start gap-x-3 w-full">
       <AlignLeft className="h-5 w-5 mt-0.5 text-neutral-700" />
       <div className="w-full">
-        <p className="font-semibold text-neutral-700 mb-2">Description</p>
+        <p className="font-semibold text-neutral-700 mb-2">Опис</p>
         {isEditing ? (
-          <form action={onSubmit} ref={formRef} className="space-y-2">
-            <FormTextarea
-              id="description"
-              className="w-full mt-2"
-              placeholder="Add a description..."
-              defaultValue={data.description || undefined}
-              errors={fieldErrors}
-              ref={textareaRef}
-            />
-            <div className="flex items-center gap-x-2">
-              <FormSubmit className="bg-[#22324C] hover:bg-[#1BD2C7]">
-                Save
-              </FormSubmit>
-              <Button
-                type="button"
-                onClick={disableEditing}
-                size="sm"
-                variant="ghost"
-              >
-                Cancel
-              </Button>
-            </div>
-          </form>
+          <Protect permission="org:create_new_card:permission">
+            <form action={onSubmit} ref={formRef} className="space-y-2">
+              <FormTextarea
+                id="description"
+                className="w-full mt-2"
+                placeholder="Додати опис..."
+                defaultValue={data.description || undefined}
+                errors={fieldErrors}
+                ref={textareaRef}
+              />
+              <div className="flex items-center gap-x-2">
+                <FormSubmit className="bg-[#22324C] hover:bg-[#1BD2C7]">
+                  Зберегти
+                </FormSubmit>
+                <Button
+                  type="button"
+                  onClick={disableEditing}
+                  size="sm"
+                  variant="ghost"
+                >
+                  Відмінити
+                </Button>
+              </div>
+            </form>
+          </Protect>
         ) : (
           <div
             onClick={enableEditing}
             role="button"
             className="min-h-[78px] bg-neutral-200 text-sm font-medium py-3 px-3.5 rounded-md"
           >
-            {data.description || "Add a description..."}
+            {data.description || "Додати опис..."}
           </div>
         )}
       </div>

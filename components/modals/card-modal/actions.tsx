@@ -23,7 +23,7 @@ export const Actions = ({ data }: ActionsProps) => {
     copyCard,
     {
       onSuccess: (data) => {
-        toast.success(`Card "${data.title}" copied`);
+        toast.success(`Картку "${data.title}" було скопійовано`);
         cardModal.onClose();
       },
       onError: (error) => {
@@ -35,7 +35,7 @@ export const Actions = ({ data }: ActionsProps) => {
     deleteCard,
     {
       onSuccess: (data) => {
-        toast.success(`Card "${data.title}" deleted`);
+        toast.success(`Картку "${data.title}" було видалено`);
         cardModal.onClose();
       },
       onError: (error) => {
@@ -64,7 +64,7 @@ export const Actions = ({ data }: ActionsProps) => {
 
   return (
     <div className="space-y-2 mt-2">
-      <p className="text-xs font-semibold">Actions</p>
+      <p className="text-xs font-semibold">Дії</p>
       <Button
         onClick={onCopy}
         disabled={isLoadingCopy}
@@ -72,7 +72,7 @@ export const Actions = ({ data }: ActionsProps) => {
         className="w-full justify-start"
         size="inline"
       >
-        <Copy className="h-4 w-4 mr-2" /> Copy
+        <Copy className="h-4 w-4 mr-2" /> Скопіювати
       </Button>
       <Button
         onClick={onDelete}
@@ -81,7 +81,7 @@ export const Actions = ({ data }: ActionsProps) => {
         className="w-full justify-start"
         size="inline"
       >
-        <Trash className="h-4 w-4 mr-2" /> Delete
+        <Trash className="h-4 w-4 mr-2" /> Видалити
       </Button>
     </div>
   );

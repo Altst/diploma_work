@@ -14,7 +14,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   if (!userId || !orgId) {
     return {
-      error: "Unauthorized",
+      error: "Неавторізовано",
     };
   }
 
@@ -25,11 +25,11 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     card = await db.card.update({
       where: {
         id,
-        list:{
-          board:{
-            orgId
-          }
-        }
+        list: {
+          board: {
+            orgId,
+          },
+        },
       },
       data: {
         ...values,
@@ -44,7 +44,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: "Failed to update",
+      error: "Не вдалося оновити",
     };
   }
 

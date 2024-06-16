@@ -37,17 +37,17 @@ const localization = {
   footerPageLink__privacy: "Приватність",
   footerPageLink__terms: "Умови",
   formButtonPrimary: "Продовжити",
-  formButtonPrimary__verify: "Verify",
+  formButtonPrimary__verify: "Підтвердити",
   formFieldAction__forgotPassword: "Забули пароль?",
   formFieldError__matchingPasswords: "Паролі збігаються.",
   formFieldError__notMatchingPasswords: "Паролі не збігаються.",
   formFieldError__verificationLinkExpired:
-    "The verification link expired. Please request a new link.",
+    "Термін дії посилання для підтвердження закінчився. Будь ласка, надішліть запит на нове посилання.",
   formFieldHintText__optional: "Необов'язково",
   formFieldHintText__slug:
-    "A slug is a human-readable ID that must be unique. It’s often used in URLs.",
+    "Слаг — це зрозумілий людині ідентифікатор, який має бути унікальним. Він часто використовується в URL-адресах.",
   formFieldInputPlaceholder__backupCode: "",
-  formFieldInputPlaceholder__confirmDeletionUserAccount: "Delete account",
+  formFieldInputPlaceholder__confirmDeletionUserAccount: "Видалити акаунт",
   formFieldInputPlaceholder__emailAddress: "",
   formFieldInputPlaceholder__emailAddress_username: "",
   formFieldInputPlaceholder__emailAddresses:
@@ -73,12 +73,13 @@ const localization = {
   formFieldLabel__firstName: "Ім'я",
   formFieldLabel__lastName: "Прізвище",
   formFieldLabel__newPassword: "Новий пароль",
-  formFieldLabel__organizationDomain: "Domain",
+  formFieldLabel__organizationDomain: "Домен",
   formFieldLabel__organizationDomainDeletePending:
-    "Delete pending invitations and suggestions",
-  formFieldLabel__organizationDomainEmailAddress: "Verification email address",
+    "Видалити незавершені запрошення та пропозиції",
+  formFieldLabel__organizationDomainEmailAddress:
+    "Підтвердження електронної адреси",
   formFieldLabel__organizationDomainEmailAddressDescription:
-    "Enter an email address under this domain to receive a code and verify this domain.",
+    "Введіть адресу електронної пошти в цьому домені, щоб отримати код і підтвердити цей домен.",
   formFieldLabel__organizationName: "Назва організації",
   formFieldLabel__organizationSlug: "URL адреса",
   formFieldLabel__passkeyName: undefined,
@@ -101,26 +102,26 @@ const localization = {
     action__suggestionsAccept: "Запит на приєднання",
     createOrganization: "Створити відділ",
     invitationAcceptedLabel: "Приєднався",
-    subtitle: "щоб продовжити з {{applicationName}}",
-    suggestionsAcceptedLabel: "Pending approval",
+    subtitle: "щоб продовжити працювати з {{applicationName}}",
+    suggestionsAcceptedLabel: "Очікує підтвердження",
     title: "Оберіть акаунт",
     titleWithoutPersonal: "Оберіть відділ",
   },
   organizationProfile: {
-    badge__automaticInvitation: "Automatic invitations",
-    badge__automaticSuggestion: "Automatic suggestions",
-    badge__manualInvitation: "No automatic enrollment",
-    badge__unverified: "Unverified",
+    badge__automaticInvitation: "Автоматичні запрошення",
+    badge__automaticSuggestion: "Автоматичні пропозиції",
+    badge__manualInvitation: "Немає автоматичної реєстрації",
+    badge__unverified: "Неперевірений",
     createDomainPage: {
       subtitle:
-        "Add the domain to verify. Users with email addresses at this domain can join the organization automatically or request to join.",
-      title: "Add domain",
+        "Додайте домен для підтвердження. Користувачі з адресами електронної пошти в цьому домені можуть приєднатися до організації автоматично або подати запит на приєднання.",
+      title: "Додати домен",
     },
     invitePage: {
       detailsTitle__inviteFailed:
         "Запрошення не вдалося надіслати. Виправте наступне і повторіть спробу:",
       formButtonPrimary__continue: "Надіслати запрошення",
-      selectDropdown__role: "Select role",
+      selectDropdown__role: "Виберіть роль",
       subtitle: "Запросіть нових учасників до цієї організації",
       successMessage: "Запрошення успішно надіслано",
       title: "Запросити учасників",
@@ -138,9 +139,9 @@ const localization = {
       invitationsTab: {
         autoInvitations: {
           headerSubtitle:
-            "Invite users by connecting an email domain with your organization. Anyone who signs up with a matching email domain will be able to join the organization anytime.",
-          headerTitle: "Automatic invitations",
-          primaryButton: "Manage verified domains",
+            "Запросіть користувачів, підключивши домен електронної пошти до вашої організації. Кожен, хто зареєструється з відповідним доменом електронної пошти, зможе приєднатися до організації будь-коли.",
+          headerTitle: "Автоматичні запрошення",
+          primaryButton: "Керуйте перевіреними доменами",
         },
         table__emptyRow: "Немає запрошень",
       },
@@ -151,14 +152,14 @@ const localization = {
       requestsTab: {
         autoSuggestions: {
           headerSubtitle:
-            "Users who sign up with a matching email domain, will be able to see a suggestion to request to join your organization.",
-          headerTitle: "Automatic suggestions",
-          primaryButton: "Manage verified domains",
+            "Користувачі, які зареєструються з відповідним доменом електронної пошти, зможуть побачити пропозицію подати запит на приєднання до вашої організації.",
+          headerTitle: "Автоматичні пропозиції",
+          primaryButton: "Керуйте перевіреними доменами",
         },
-        menuAction__approve: "Approve",
-        menuAction__reject: "Reject",
-        tableHeader__requested: "Requested access",
-        table__emptyRow: "No requests to display",
+        menuAction__approve: "Затвердити",
+        menuAction__reject: "Відхилити",
+        tableHeader__requested: "Запит на доступ",
+        table__emptyRow: "Немає запитів на відображення",
       },
       start: {
         headerTitle__invitations: "Запрошення",
@@ -194,23 +195,23 @@ const localization = {
         title: "Небезпека",
       },
       domainSection: {
-        menuAction__manage: "Manage",
-        menuAction__remove: "Delete",
-        menuAction__verify: "Verify",
-        primaryButton: "Add domain",
+        menuAction__manage: "Керувати",
+        menuAction__remove: "Видалити",
+        menuAction__verify: "Підтвердити",
+        primaryButton: "Додати домен",
         subtitle:
-          "Allow users to join the organization automatically or request to join based on a verified email domain.",
-        title: "Verified domains",
+          "Дозволити користувачам приєднуватися до організації автоматично або надсилати запит на приєднання на основі підтвердженого домену електронної пошти.",
+        title: "Перевірені домени",
       },
       successMessage: "Організацію було оновлено.",
       title: "Профіль організації",
     },
     removeDomainPage: {
-      messageLine1: "The email domain {{domain}} will be removed.",
+      messageLine1: "Домен електронної пошти {{domain}} буде видалено.",
       messageLine2:
-        "Users won’t be able to join the organization automatically after this.",
-      successMessage: "{{domain}} has been removed.",
-      title: "Remove domain",
+        "Після цього користувачі не зможуть автоматично приєднатися до організації.",
+      successMessage: "{{domain}} видалено.",
+      title: "Видалити домен",
     },
     start: {
       headerTitle__general: "Основне",
@@ -218,61 +219,64 @@ const localization = {
       profileSection: {
         primaryButton: "",
         title: "Профіль відділу",
-        uploadAction__title: "Logo",
+        uploadAction__title: "Логотип",
       },
     },
     verifiedDomainPage: {
       dangerTab: {
-        calloutInfoLabel: "Removing this domain will affect invited users.",
-        removeDomainActionLabel__remove: "Remove domain",
-        removeDomainSubtitle: "Remove this domain from your verified domains",
-        removeDomainTitle: "Remove domain",
+        calloutInfoLabel:
+          "Видалення цього домену вплине на запрошених користувачів.",
+        removeDomainActionLabel__remove: "Видалити домен",
+        removeDomainSubtitle:
+          "Видалити цей домен зі списку підтверджених доменів",
+        removeDomainTitle: "Видалити домен",
       },
       enrollmentTab: {
         automaticInvitationOption__description:
-          "Users are automatically invited to join the organization when they sign-up and can join anytime.",
-        automaticInvitationOption__label: "Automatic invitations",
+          "Користувачі автоматично запрошуються приєднатися до організації під час реєстрації та можуть приєднатися будь-коли.",
+        automaticInvitationOption__label: "Автоматичні запрошення",
         automaticSuggestionOption__description:
-          "Users receive a suggestion to request to join, but must be approved by an admin before they are able to join the organization.",
-        automaticSuggestionOption__label: "Automatic suggestions",
+          "Користувачі отримують пропозицію подати запит на приєднання, але вони повинні бути схвалені адміністратором, перш ніж вони зможуть приєднатися до організації.",
+        automaticSuggestionOption__label: "Автоматичні запрошення",
         calloutInfoLabel:
-          "Changing the enrollment mode will only affect new users.",
+          "Зміна режиму реєстрації вплине лише на нових користувачів.",
         calloutInvitationCountLabel:
-          "Pending invitations sent to users: {{count}}",
+          "Запрошення, що очікують на розгляд, надіслано користувачам: {{count}}",
         calloutSuggestionCountLabel:
-          "Pending suggestions sent to users: {{count}}",
+          "Пропозиції, що очікують на розгляд, надіслано користувачам: {{count}}",
         manualInvitationOption__description:
-          "Users can only be invited manually to the organization.",
-        manualInvitationOption__label: "No automatic enrollment",
+          "Користувачів можна запросити в організацію лише вручну.",
+        manualInvitationOption__label: "Немає автоматичної реєстрації",
         subtitle:
-          "Choose how users from this domain can join the organization.",
+          "Виберіть, як користувачі з цього домену можуть приєднатися до організації.",
       },
       start: {
-        headerTitle__danger: "Danger",
-        headerTitle__enrollment: "Enrollment options",
+        headerTitle__danger: "Небезпека",
+        headerTitle__enrollment: "Варіанти зарахування",
       },
       subtitle:
-        "The domain {{domain}} is now verified. Continue by selecting enrollment mode.",
-      title: "Update {{domain}}",
+        "Домен {{domain}} тепер перевірено. Продовжте, вибравши режим реєстрації.",
+      title: "Оновити {{domain}}",
     },
     verifyDomainPage: {
-      formSubtitle: "Enter the verification code sent to your email address",
-      formTitle: "Verification code",
-      resendButton: "Didn't receive a code? Resend",
-      subtitle: "The domain {{domainName}} needs to be verified via email.",
+      formSubtitle:
+        "Введіть код підтвердження, надісланий на вашу електронну адресу",
+      formTitle: "Код підтвердження",
+      resendButton: "Не отримали код? Надіслати повторно",
+      subtitle: "Домен {{domainName}} потрібно підтвердити електронною поштою.",
       subtitleVerificationCodeScreen:
-        "A verification code was sent to {{emailAddress}}. Enter the code to continue.",
-      title: "Verify domain",
+        "Код підтвердження надіслано на адресу {{emailAddress}}. Введіть код, щоб продовжити.",
+      title: "Підтвердити домен",
     },
   },
   organizationSwitcher: {
     action__createOrganization: "Створити організацію",
-    action__invitationAccept: "Join",
+    action__invitationAccept: "Приєднатися",
     action__manageOrganization: "Управління організацією",
-    action__suggestionsAccept: "Request to join",
+    action__suggestionsAccept: "Запит на приєднання",
     notSelected: "Організація не обрана",
     personalWorkspace: "Особистий робочий простір",
-    suggestionsAcceptedLabel: "Pending approval",
+    suggestionsAcceptedLabel: "Очікує підтвердження",
   },
   paginationButton__next: "Вперед",
   paginationButton__previous: "Назад",
@@ -280,14 +284,14 @@ const localization = {
   paginationRowText__of: "з",
   signIn: {
     accountSwitcher: {
-      action__addAccount: "Add account",
-      action__signOutAll: "Sign out of all accounts",
-      subtitle: "Select the account with which you wish to continue.",
-      title: "Choose an account",
+      action__addAccount: "Додати обліковий запис",
+      action__signOutAll: "Вийти з усіх облікових записів",
+      subtitle: "Виберіть обліковий запис, з яким ви бажаєте продовжити.",
+      title: "Виберіть обліковий запис",
     },
     alternativeMethods: {
       actionLink: "Допомога",
-      actionText: "Don’t have any of these?",
+      actionText: "У вас немає цього?",
       blockButton__backupCode: "Використовуйте код відновлення",
       blockButton__emailCode: "Надіслати код на {{identifier}}",
       blockButton__emailLink: "Надіслати посилання на {{identifier}}",
@@ -301,7 +305,8 @@ const localization = {
           "Якщо у вас виникли труднощі з входом у Ваш акаунт, напишіть нам, і ми попрацюємо з Вами, щоб відновити доступ якнайшвидше.",
         title: "Допомога",
       },
-      subtitle: "Facing issues? You can use any of these methods to sign in.",
+      subtitle:
+        "Виникли проблеми? Ви можете використовувати будь-який із цих методів для входу.",
       title: "Використовувати інший метод",
     },
     backupCodeMfa: {
@@ -350,10 +355,11 @@ const localization = {
     forgotPassword: {
       formTitle: "Код відновлення пароля",
       resendButton: "Надіслати код ще раз",
-      subtitle: "to reset your password",
-      subtitle_email: "First, enter the code sent to your email ID",
-      subtitle_phone: "First, enter the code sent to your phone",
-      title: "Reset password",
+      subtitle: "щоб скинути пароль",
+      subtitle_email:
+        "Спочатку введіть код, надісланий на вашу електронну адресу",
+      subtitle_phone: "Спочатку введіть код, надісланий на ваш телефон",
+      title: "Скинути пароль",
     },
     forgotPasswordAlternativeMethods: {
       blockButton__resetPassword: "Відновити пароль",
@@ -392,8 +398,7 @@ const localization = {
     },
     resetPassword: {
       formButtonPrimary: "Скинути пароль",
-      requiredMessage:
-        "For security reasons, it is required to reset your password.",
+      requiredMessage: "З міркувань безпеки потрібно скинути пароль.",
       successMessage:
         "Ваш пароль успішно змінено. Виконується вхід, зачекайте.",
       title: "Скинути пароль",
@@ -473,9 +478,9 @@ const localization = {
   socialButtonsBlockButton: "Продовжити за допомогою {{provider|titleize}}",
   unstable__errors: {
     captcha_invalid:
-      "Sign up unsuccessful due to failed security validations. Please refresh the page to try again or reach out to support for more assistance.",
+      "Зареєструватися не вдалось через невдалу перевірку безпеки. Оновіть сторінку, щоб повторити спробу, або зверніться до служби підтримки, щоб отримати додаткову допомогу.",
     captcha_unavailable:
-      "Sign up unsuccessful due to failed bot validation. Please refresh the page to try again or reach out to support for more assistance.",
+      "Зареєструватися не вдалось через помилку перевірки ботом. Оновіть сторінку, щоб повторити спробу, або зверніться до служби підтримки, щоб отримати додаткову допомогу.",
     form_code_incorrect: "",
     form_identifier_exists: "",
     form_identifier_exists__email_address: undefined,
@@ -484,15 +489,15 @@ const localization = {
     form_identifier_not_found: "",
     form_param_format_invalid: "",
     form_param_format_invalid__email_address:
-      "Email address must be a valid email address.",
+      "Електронна адреса має бути дійсною.",
     form_param_format_invalid__phone_number:
-      "Phone number must be in a valid international format",
+      "Номер телефону має бути в дійсному міжнародному форматі",
     form_param_max_length_exceeded__first_name:
-      "First name should not exceed 256 characters.",
+      "Ім'я не повинно перевищувати 256 символів.",
     form_param_max_length_exceeded__last_name:
-      "Last name should not exceed 256 characters.",
+      "Прізвище не повинно перевищувати 256 символів.",
     form_param_max_length_exceeded__name:
-      "Name should not exceed 256 characters.",
+      "Назва не повинна перевищувати 256 символів.",
     form_param_nil: "",
     form_password_incorrect: "",
     form_password_length_too_short: "",
@@ -506,7 +511,7 @@ const localization = {
     form_username_invalid_character: "",
     form_username_invalid_length: "",
     identification_deletion_failed:
-      "You cannot delete your last identification.",
+      "Ви не можете видалити свою останню ідентифікацію.",
     not_allowed_access: "",
     passkey_already_exists: undefined,
     passkey_not_supported: undefined,
@@ -522,7 +527,7 @@ const localization = {
       requireUppercase: "букву у верхньому регістрі",
       sentencePrefix: "Ваш пароль повинен містити",
     },
-    phone_number_exists: "This phone number is taken. Please try another.",
+    phone_number_exists: "Цей номер телефону зайнятий. Спробуйте інший.",
     zxcvbn: {
       couldBeStronger:
         "Ваш пароль підходить, але міг би бути надійнішим. Спробуйте додати більше символів.",
@@ -649,11 +654,11 @@ const localization = {
       title: "Додати адресу електронної пошти",
       verifyTitle: "Verify email address",
     },
-    formButtonPrimary__add: "Add",
+    formButtonPrimary__add: "Додати",
     formButtonPrimary__continue: "Продовжити",
     formButtonPrimary__finish: "Завершити",
-    formButtonPrimary__remove: "Remove",
-    formButtonPrimary__save: "Save",
+    formButtonPrimary__remove: "Видалити",
+    formButtonPrimary__save: "Зберегти",
     formButtonReset: "Скасувати",
     mfaPage: {
       formHint: "Виберіть метод для додавання.",
@@ -676,10 +681,10 @@ const localization = {
       subtitle__unavailablePhoneNumbers:
         "Немає доступних номерів телефону для реєстрації в двоетапній перевірці з кодом з SMS.",
       successMessage1:
-        "When signing in, you will need to enter a verification code sent to this phone number as an additional step.",
+        "Під час входу вам потрібно буде додатково ввести код підтвердження, надісланий на цей номер телефону.",
       successMessage2:
-        "Save these backup codes and store them somewhere safe. If you lose access to your authentication device, you can use backup codes to sign in.",
-      successTitle: "SMS code verification enabled",
+        "Збережіть ці резервні коди та зберігайте їх у безпечному місці. Якщо ви втратите доступ до свого пристрою автентифікації, ви можете використовувати резервні коди для входу.",
+      successTitle: "Увімкнено перевірку коду SMS",
       title: "Додати перевірку кодом з SMS",
     },
     mfaTOTPPage: {
@@ -728,9 +733,9 @@ const localization = {
     },
     passwordPage: {
       checkboxInfoText__signOutOfOtherSessions:
-        "It is recommended to sign out of all other devices which may have used your old password.",
+        "Рекомендується вийти з усіх інших пристроїв, на яких міг використовуватися ваш старий пароль.",
       readonly:
-        "Your password can currently not be edited because you can sign in only via the enterprise connection.",
+        "Ваш пароль наразі не можна змінити, оскільки ви можете ввійти лише через підключення підприємства.",
       successMessage__set: "Ваш пароль встановлено.",
       successMessage__signOutOfOtherSessions:
         "Усі інші пристрої були виведені із системи.",
@@ -751,8 +756,8 @@ const localization = {
       },
       successMessage: "{{identifier}} було додано до вашого облікового запису.",
       title: "Додати номер телефону",
-      verifySubtitle: "Enter the verification code sent to {{identifier}}",
-      verifyTitle: "Verify phone number",
+      verifySubtitle: "Введіть код підтвердження, надісланий на {{identifier}}",
+      verifyTitle: "Підтвердити номер телефону",
     },
     profilePage: {
       fileDropAreaHint:
@@ -761,7 +766,7 @@ const localization = {
       imageFormSubtitle: "Завантажити зображення",
       imageFormTitle: "Зображення профілю",
       readonly:
-        "Your profile information has been provided by the enterprise connection and cannot be edited.",
+        "Інформацію вашого профілю надано корпоративним з’єднанням, і її неможливо редагувати.",
       successMessage: "Ваш профіль було оновлено.",
       title: "Оновити профіль",
     },
@@ -776,7 +781,7 @@ const localization = {
         destructiveActionTitle: "Видалити",
         primaryButton: "Підключити акаунт",
         subtitle__reauthorize:
-          "The required scopes have been updated, and you may be experiencing limited functionality. Please re-authorize this application to avoid any issues",
+          "Потрібні області оновлено, і можливо, ви зіткнулися з обмеженою функціональністю. Повторно авторизуйте цю програму, щоб уникнути проблем",
         title: "Підключені акаунти",
       },
       dangerSection: {
@@ -792,7 +797,7 @@ const localization = {
         title: "Адреси електронної пошти",
       },
       enterpriseAccountsSection: {
-        title: "Enterprise accounts",
+        title: "Облікові записи підприємства",
       },
       headerTitle__account: "Обліковий запис",
       headerTitle__security: "Безпека",

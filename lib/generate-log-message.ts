@@ -5,12 +5,12 @@ export const generateLogMessage = (log: AuditLog) => {
 
   switch (action) {
     case ACTION.CREATE:
-      return `created ${entityType.toLowerCase()} "${entityTitle}"`;
+      return `створив ${entityType.toLowerCase()} "${entityTitle}"`;
     case ACTION.UPDATE:
-      return `updated ${entityType.toLowerCase()} "${entityTitle}"`;
+      return `оновив ${entityType.toLowerCase()} "${entityTitle}"`;
     case ACTION.DELETE:
-      return `deleted ${entityType.toLowerCase()} "${entityTitle}"`;
+      return `видалив ${entityType.toLowerCase()} "${entityTitle}"`;
     default:
-      return `unknown action ${entityType.toLowerCase()} "${entityTitle}"`;
+      return `невідома дія ${entityType.toLowerCase()} "${entityTitle}"`;
   }
 };

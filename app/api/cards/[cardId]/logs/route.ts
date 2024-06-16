@@ -11,7 +11,7 @@ export async function GET(
     const { userId, orgId } = auth();
 
     if (!userId || !orgId) {
-      return new NextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Неавторізовано", { status: 401 });
     }
 
     const auditLogs = await db.auditLog.findMany({
@@ -28,6 +28,6 @@ export async function GET(
 
     return NextResponse.json(auditLogs);
   } catch (error) {
-    return new NextResponse("Internal Error", { status: 500 });
+    return new NextResponse("Внутрішня помилка", { status: 500 });
   }
 }

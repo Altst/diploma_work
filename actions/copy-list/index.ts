@@ -14,7 +14,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   if (!userId || !orgId) {
     return {
-      error: "Unauthorized",
+      error: "Неавторізовано",
     };
   }
 
@@ -36,7 +36,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
 
     if (!listToCopy) {
-      return { error: "List not found" };
+      return { error: "Список не знайдено" };
     }
 
     const lastList = await db.list.findFirst({
@@ -50,7 +50,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     list = await db.list.create({
       data: {
         boardId: listToCopy.boardId,
-        title: `${listToCopy.title} - Copy`,
+        title: `${listToCopy.title} - Копія`,
         order: newOrder,
         cards: {
           createMany: {
@@ -75,7 +75,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: "Failed to copy",
+      error: "Не вдалося скопіювати",
     };
   }
 

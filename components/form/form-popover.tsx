@@ -34,7 +34,7 @@ export const FormPopover = ({
 
   const { execute, fieldErrors } = useAction(createBoard, {
     onSuccess: (data) => {
-      toast.success("Board created");
+      toast.success("Дошка створена");
       closeRef.current?.click();
       router.push(`/board/${data.id}`);
     },
@@ -59,7 +59,7 @@ export const FormPopover = ({
         sideOffset={sideOffset}
       >
         <div className="text-sm fonr-medium text-center text-neutral-600 pb-4">
-          Create board
+          Створити дошку
         </div>
         <PopoverClose ref={closeRef} asChild>
           <Button
@@ -73,12 +73,12 @@ export const FormPopover = ({
           <div className="space-y-4">
             <FormInput
               id="title"
-              label="Board title"
+              label="Назва дошки"
               type="text"
               errors={fieldErrors}
             />
           </div>
-          <FormSubmit className="w-full bg-[#22324C]">Create</FormSubmit>
+          <FormSubmit className="w-full bg-[#22324C]">Створити</FormSubmit>
         </form>
       </PopoverContent>
     </Popover>

@@ -10,7 +10,7 @@ export async function GET(
     const { userId, orgId } = auth();
 
     if (!userId || !orgId) {
-      return new NextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Неавторізовано", { status: 401 });
     }
 
     const card = await db.card.findUnique({
@@ -31,8 +31,8 @@ export async function GET(
       },
     });
 
-    return NextResponse.json(card)
+    return NextResponse.json(card);
   } catch (error) {
-    return new NextResponse("Internal Error", { status: 500 });
+    return new NextResponse("Внутрішня помилка", { status: 500 });
   }
 }

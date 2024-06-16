@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/use-action";
 import { createList } from "@/actions/create-list";
 import { toast } from "sonner";
+import { Protect } from "@clerk/nextjs";
 
 export const ListForm = () => {
   const params = useParams();
@@ -73,12 +74,12 @@ export const ListForm = () => {
             errors={fieldErrors}
             id="title"
             className="text-sm px-2 py-1 h-7 font-medium border-transparent hover:border-input focus:border-input transition"
-            placeholder="Enter list title..."
+            placeholder="Введіть назву списку..."
           />
           <input hidden value={params.boardId} name="boardId" />
           <div className="flex items-center gap-x-1">
             <FormSubmit className="bg-[#22324C] hover:bg-[#1BD2C7]">
-              Add list
+              Додати список
             </FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="ghost">
               <X className="h-5 w-5" />
@@ -90,14 +91,16 @@ export const ListForm = () => {
   }
 
   return (
-    <ListWrapper>
-      <button
-        onClick={enableEditing}
-        className="w-full rounded-md bg-white hover:bg-white/80 transition p-3 flex items-center font-medium text-sm"
-      >
-        <Plus className="h-4 w-4 mr-2" />
-        Add a list
-      </button>
-    </ListWrapper>
+    <Protect permission="org:create_new_list:permission">
+      <ListWrapper>
+        <button
+          onClick={enableEditing}
+          className="w-full rounded-md bg-white hover:bg-white/80 transition p-3 flex items-center font-medium text-sm"
+        >
+          <Plus className="h-4 w-4 mr-2" />
+          Додати список
+        </button>
+      </ListWrapper>
+    </Protect>
   );
 };

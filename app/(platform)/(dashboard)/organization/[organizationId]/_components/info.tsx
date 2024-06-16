@@ -17,7 +17,7 @@ export const Info = () => {
         <Image
           fill
           src={organization?.imageUrl!}
-          alt="Workspace"
+          alt="Відділ"
           className="rounded-md object-cover"
         />
       </div>

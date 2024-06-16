@@ -15,7 +15,7 @@ export const createAuditLog = async (props: Props) => {
     const user = await currentUser();
 
     if (!user || !orgId) {
-      throw new Error("User not found");
+      throw new Error("Користувача не знайдено");
     }
 
     const { entityId, entityType, entityTitle, action } = props;

@@ -12,7 +12,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   if (!userId || !orgId) {
     return {
-      error: "Unauthorized",
+      error: "Неавторізовано",
     };
   }
 
@@ -40,7 +40,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     updatedCards = await db.$transaction(transaction);
   } catch (error) {
     return {
-      error: "Failed to reorder",
+      error: "Не вдалося перенести",
     };
   }
 

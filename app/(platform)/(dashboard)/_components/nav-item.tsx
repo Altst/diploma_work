@@ -37,17 +37,17 @@ export const NavItem = ({
 
   const routes = [
     {
-      label: "Boards",
+      label: "Дошки",
       icon: <Layout className="h-4 w-4 mr-2" />,
       href: `/organization/${organization.id}`,
     },
     {
-      label: "Activity",
+      label: "Активність",
       icon: <Activity className="h-4 w-4 mr-2" />,
       href: `/organization/${organization.id}/activity`,
     },
     {
-      label: "Settings",
+      label: "Налаштування",
       icon: <Settings className="h-4 w-4 mr-2" />,
       href: `/organization/${organization.id}/settings`,
     },
@@ -71,7 +71,7 @@ export const NavItem = ({
             <Image
               fill
               src={organization.imageUrl}
-              alt={"Organization"}
+              alt={"Відділ"}
               className="rounded-sm object-cover"
             />
           </div>

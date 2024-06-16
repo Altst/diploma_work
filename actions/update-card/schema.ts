@@ -5,21 +5,21 @@ export const UpdateCard = z.object({
   description: z.optional(
     z
       .string({
-        required_error: "Description is required",
-        invalid_type_error: "Description is required",
+        required_error: "Потрібен опис",
+        invalid_type_error: "Потрібен опис",
       })
       .min(3, {
-        message: "Description is too short",
+        message: "Опис занадто короткий",
       })
   ),
   title: z.optional(
     z
       .string({
-        required_error: "Title is required",
-        invalid_type_error: "Title is required",
+        required_error: "Картка повинна мати назву",
+        invalid_type_error: "Картка повинна мати назву",
       })
       .min(3, {
-        message: "Title is too short",
+        message: "Назва занадто коротка",
       })
   ),
   id: z.string(),
