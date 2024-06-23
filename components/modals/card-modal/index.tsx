@@ -45,7 +45,11 @@ export const CardModal = () => {
               )}
             </div>
           </div>
-          {!cardData ? <Actions.Skeleton /> : <Actions data={cardData} />}
+          {!cardData ? (
+            <Actions.Skeleton />
+          ) : (
+            <Actions data={cardData} cardId={""} />
+          )}
         </div>
       </DialogContent>
     </Dialog>
